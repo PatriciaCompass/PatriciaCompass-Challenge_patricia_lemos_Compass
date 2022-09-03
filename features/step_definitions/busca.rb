@@ -1,16 +1,17 @@
 Dado('que esteja na home') do
-   @home = Home.new
-   @home.load
+   @home_page = Home.new
+   @home_page.load
+   binding.pry
 end
   
 Quando('realizar uma busca por um produto existente') do
-   @home.search_for('SPEAKERS')
-   @search_results = SearchResults.new
+   @home.search_for('Speakers')
+   @search_results_page = SearchResults.new
+   binding.pry
 end
   
 Então('deverão ser retornados resultados na busca') do
-  @search_results
-  expect(@search_results).to have_products
+  expect(@search_results_page).to have_products
 end
 
                                                                         
