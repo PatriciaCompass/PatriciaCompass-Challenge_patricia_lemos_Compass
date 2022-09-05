@@ -11,7 +11,7 @@ Funcionalidade: Busca
   @search_for_product 
   Cenário: Buscar produto 
     Quando realizar uma busca por um produto existente 
-    Então deve ser retornado resultado na busca 
+    Então deverão ser retornado resultado na busca 
 
   @search_for_different_products
   Esquema do Cenário: Buscar por diferentes produtos
