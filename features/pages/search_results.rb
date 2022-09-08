@@ -1,5 +1,12 @@
-class SearchResults < SitePrism::Page
-    set_url '/#/search'
+require_relative './sections/header'
+require_relative '../sections/products'
 
-    elements :products, 'div.categoryRight li.ng-scope'
+module Pages
+    class SearchResults < SitePrism::Page
+        set_url '/#/search'
+
+        section  :header, Sections::Header, 'header'
+        # elements :products, 'div.categoryRight li.ng-scope'
+        sections :products, Sections::Products, 'div.categoryRight li.ng-scope'
+    end
 end

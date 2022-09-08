@@ -1,12 +1,17 @@
-class Home < SitePrism::Page
-    set_url '/'
+require_relative './sections/header'
 
-    element :btn_open_search, '#search #menuSearch'
-    element :input_search, '#autoComplete'
+module Pages
+  class Home < SitePrism::Page
+      set_url '/'
+      section :header, Sections::Header, 'header'
+      element :loader, 'body > .loader'
 
-    def search_for(product)
-      btn_open_search.click
-      input_search.set product
-      btn_open_search.click
-    end
+      def search_for(product)
+        header.btn_open_search.click
+        header.input_search.set product
+        wait_until_loader_visible
+        wait_until_loader_invisible
+        header.btn_open_search.click
+      end
+  end
 end

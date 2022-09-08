@@ -11,10 +11,10 @@ ENVIRONMENT_CONFIG = YAML.load_file(File.dirname(__FILE__) + "/environment/#{ENV
 puts ENVIRONMENT_CONFIG
 URL = ENVIRONMENT_CONFIG['url']
 
-Capybara.register_driver :site_prism do |app|
+Capybara.register_driver :my_chrome do |app|
     caps = Selenium::WebDriver::Remote::Capabilities.chrome("goog:chromeOptions" => {"args" => ["--incognito", 
         "--ignore-certificates-erros", "--disable-popup-blocking", "--start-maximized", "--enable-debug",
-        "--window-size=1000,800", "--ignore-ssl-errors", "--disable-gpu","--disable-translate", "--no-sandbox",
+        "--window-size=1270,680", "--ignore-ssl-errors", "--disable-gpu","--disable-translate", "--no-sandbox",
         "--disable-impl-side-painting", "--debug_level=3", "--acceptInsecureCerts=true"]})
     
     if  ENV['HEADLESS']
@@ -29,6 +29,6 @@ Capybara.register_driver :site_prism do |app|
     Capybara::Selenium::Driver.new(app, options)
 end
 
-Capybara.default_driver         = :site_prism
+Capybara.default_driver         = :my_chrome
 Capybara.app_host               = URL
 Capybara.default_max_wait_time  = 10

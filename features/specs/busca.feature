@@ -11,15 +11,15 @@ Funcionalidade: Busca
   @search_for_product 
   Cenário: Buscar produto 
     Quando realizar uma busca por um produto existente 
-    Então deverão ser retornado resultado na busca 
+    Então deverão ser retornados resultados na busca 
 
   @search_for_different_products
   Esquema do Cenário: Buscar por diferentes produtos
-    Quando buscar pelo produto "<tipo>"
+    Quando buscar pelo produto "<produto>"
     Então deverão ser retornados resultados na busca
 
     Exemplos:
-    |    tipo     |
+    |    produto  |
     | Speakers    |
     | Tablets     |
     | Laptops     |
