@@ -14,7 +14,7 @@ URL = ENVIRONMENT_CONFIG['url']
 Capybara.register_driver :my_chrome do |app|
     caps = Selenium::WebDriver::Remote::Capabilities.chrome("goog:chromeOptions" => {"args" => ["--incognito", 
         "--ignore-certificates-erros", "--disable-popup-blocking", "--start-maximized", "--enable-debug",
-        "--window-size=1270,680", "--ignore-ssl-errors", "--disable-gpu","--disable-translate", "--no-sandbox",
+        "--window-size=1200,600", "--ignore-ssl-errors", "--disable-gpu","--disable-translate", "--no-sandbox",
         "--disable-impl-side-painting", "--debug_level=3", "--acceptInsecureCerts=true"]})
     
     if  ENV['HEADLESS']
